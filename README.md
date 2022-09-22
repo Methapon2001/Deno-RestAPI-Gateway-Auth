@@ -6,7 +6,7 @@ Deno & Oak Framework RestAPI with authentication.
 - Authentication System - Access Token, Refresh Token (Refresh Token Rotation)
 - Create / View / Edit / Delete Account.
 
-# Endpoint
+## Endpoint
 | Path | Parameter | Body | Auth | Description |
 | --- | --- | --- | --- | --- |
 | `POST /account` | - | `email, password` | - | Create account. |
