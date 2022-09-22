@@ -19,4 +19,4 @@ Deno & Oak Framework RestAPI with authentication.
 | `POST /auth/logout` | - | `token` | bearer | Logout with refresh token (Also require access token authorization header). |
 
 ## Note
-I have created this for education purpose to make a secure (maybe) RestAPI & authentication system with refresh Token Rotation as API gateway for other microservices in mind.
+A secure (maybe) REST API & authentication system with refresh token rotation as API gateway for other microservices in mind for educational purpose.
