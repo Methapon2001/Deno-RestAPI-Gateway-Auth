@@ -1,7 +1,7 @@
 import { RouterMiddleware, Status } from "oak";
 import { verifyToken } from "../helpers/token.ts";
 
-export const auth = (role?: string): RouterMiddleware<string> => {
+export const auth = (role?: string | string[]): RouterMiddleware<string> => {
   return async (ctx, next) => {
     const authorization = ctx.request.headers.get("Authorization");
     const accessToken = authorization?.startsWith("Bearer ")
@@ -18,7 +18,7 @@ export const auth = (role?: string): RouterMiddleware<string> => {
       return ctx.throw(Status.Unauthorized, "Unauthorized access.");
     }
 
-    if (role && payload.role !== role) {
+    if (!role?.includes(payload.role as string)) {
       return ctx.throw(Status.Forbidden, "Forbidden acccess.");
     }
 
